@@ -2,11 +2,7 @@
   <nav class="navbar sticky-top navbar-light">
     <div class="container">
       <a class="navbar-brand" href="#">
-        <img
-          src="/public/assets/logo.png"
-          width="256"
-          height="57"
-        />
+        <img src="/public/assets/logo.png" width="256" height="57" />
       </a>
       <div class="navbar--right">
         <p>Ana Sofia Russo</p>

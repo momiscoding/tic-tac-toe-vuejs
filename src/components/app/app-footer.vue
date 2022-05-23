@@ -4,24 +4,16 @@
       <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
         <h6>About page</h6>
         <ul class="nav flex-column">
-          <li class="nav-item mb-2">
-            Play tic tac toe or 4-in-a-row anytime!
-          </li>
-          <li class="nav-item mb-2">
-            Created by Ana Russo
-          </li>
+          <li class="nav-item mb-2">Play tic tac toe or 4-in-a-row anytime!</li>
+          <li class="nav-item mb-2">Created by Ana Russo</li>
         </ul>
       </div>
 
       <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
         <h6>Contacts</h6>
         <ul class="nav flex-column">
-          <li class="nav-item mb-2">
-            (+351) 123 456 789
-          </li>
-          <li class="nav-item mb-2">
-            Rua Sá da Bandeira, 111, Porto
-          </li>
+          <li class="nav-item mb-2">(+351) 123 456 789</li>
+          <li class="nav-item mb-2">Rua Sá da Bandeira, 111, Porto</li>
         </ul>
       </div>
 
@@ -99,37 +91,36 @@
 export default {
   data() {
     return {
-      email: ""
-    };
+      email: '',
+    }
   },
 
-  checkForm: function(e) {
-    this.errors = [];
+  checkForm: function (e) {
+    this.errors = []
 
     if (!this.email) {
-      this.errors.push("Email required.");
+      this.errors.push('Email required.')
     } else if (!this.validEmail(this.email)) {
-      this.errors.push("Valid email required.");
+      this.errors.push('Valid email required.')
     }
 
     if (!this.errors.length) {
-      return true;
+      return true
     }
 
-    e.preventDefault();
+    e.preventDefault()
   },
-  validEmail: function(email) {
-    var re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    return re.test(email);
-  }
-};
+  validEmail: function (email) {
+    var re =
+      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+    return re.test(email)
+  },
+}
 </script>
 
 <style>
 .footer {
   padding: 60px 150px;
-
-  
 }
 
 .footer ul {

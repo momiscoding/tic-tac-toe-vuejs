@@ -14,27 +14,27 @@
 </template>
 
 <script>
-import GameCell from "./game-cell.vue";
+import GameCell from './game-cell.vue'
 
 export default {
-  name: "GameBoard",
+  name: 'GameBoard',
 
   components: { GameCell },
 
   props: {
     cells: Array,
-    winner: Array
+    winner: Array,
   },
 
   methods: {
     indexByRow(index, row, max = 3) {
-      return row * max + index - (max + 1);
+      return row * max + index - (max + 1)
     },
     click(index, row) {
-      this.$emit("click", this.indexByRow(index, row));
-    }
-  }
-};
+      this.$emit('click', this.indexByRow(index, row))
+    },
+  },
+}
 </script>
 
 <style lang="scss">

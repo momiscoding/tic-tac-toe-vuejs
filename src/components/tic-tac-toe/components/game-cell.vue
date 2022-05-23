@@ -4,21 +4,21 @@
 
 <script>
 export default {
-  name: "GameCell",
+  name: 'GameCell',
 
   props: {
-    value: String
+    value: String,
   },
 
   computed: {
     playerToken() {
       return {
-        "x-token": this.value && this.value === "X",
-        "o-token": this.value && this.value === "O"
-      };
-    }
-  }
-};
+        'x-token': this.value && this.value === 'X',
+        'o-token': this.value && this.value === 'O',
+      }
+    },
+  },
+}
 </script>
 
 <style>
@@ -34,14 +34,14 @@ export default {
 }
 
 .x-token {
-  background-image: url("/public/assets/img/X_bright.svg");
+  background-image: url('/public/assets/img/X_bright.svg');
   background-position: top; /* Center the image */
   background-repeat: no-repeat; /* Do not repeat the image */
   background-size: cover; /* Resize the background image to cover the entire container */
 }
 
 .o-token {
-  background-image: url("/public/assets/img/O_bright.svg");
+  background-image: url('/public/assets/img/O_bright.svg');
   background-position: top; /* Center the image */
   background-repeat: no-repeat; /* Do not repeat the image */
   background-size: cover; /* Resize the background image to cover the entire container */

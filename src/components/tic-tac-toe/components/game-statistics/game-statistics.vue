@@ -20,7 +20,7 @@
                 :key="i"
                 :class="[
                   i <= playedMatches ? 'matches--played' : '',
-                  'matches'
+                  'matches',
                 ]"
               ></div>
             </div>
@@ -44,18 +44,18 @@
 </template>
 
 <script>
-import GameStatisticsPlayer from "./components/game-statistics-player.vue";
+import GameStatisticsPlayer from './components/game-statistics-player.vue'
 
 const mapPlayer = {
-  X: "P1",
-  O: "P2"
-};
+  X: 'P1',
+  O: 'P2',
+}
 
 export default {
-  name: "GameStatistics",
+  name: 'GameStatistics',
 
   components: {
-    GameStatisticsPlayer
+    GameStatisticsPlayer,
   },
 
   props: {
@@ -63,26 +63,26 @@ export default {
 
     playedMatches: {
       type: Number,
-      default: 0
+      default: 0,
     },
 
     history: Array,
 
     totalTime: {
       type: String,
-      default: "00:00:00"
-    }
+      default: '00:00:00',
+    },
   },
 
   computed: {
     mappedHistory() {
-      const result = this.history.map(res => {
-        return mapPlayer[res] || res;
-      });
-      return result;
-    }
-  }
-};
+      const result = this.history.map((res) => {
+        return mapPlayer[res] || res
+      })
+      return result
+    },
+  },
+}
 </script>
 
 <style lang="scss">
@@ -107,14 +107,13 @@ export default {
 .matches {
   border-radius: 50%;
 
+  &:last-of-type {
+    margin: 0;
+  }
 
-&:last-of-type {
-  margin: 0;
-}
-
-&--played {
-  background-color: #00dca4;
-  border: none;
+  &--played {
+    background-color: #00dca4;
+    border: none;
   }
 }
 </style>

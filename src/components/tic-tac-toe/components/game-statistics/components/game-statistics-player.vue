@@ -8,18 +8,18 @@
 
 <script>
 export default {
-  name: "GameStatisticsPlayer",
+  name: 'GameStatisticsPlayer',
 
   props: {
-    name: String
+    name: String,
     // stats: {
     //   type: Object,
     //   default: function() {
     //     return { victories: "0", losses: "0" };
     //   }
     // }
-  }
-};
+  },
+}
 </script>
 
 <style lang="scss">
@@ -27,18 +27,18 @@ export default {
   float: left;
   width: inherit;
 
-&__numbers {
-  display: inline-block;
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  background-color: grey;
-  color: white;
-  padding-top: 3px;
-}
+  &__numbers {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: grey;
+    color: white;
+    padding-top: 3px;
+  }
 
-&__numbers > span {
-  color: black;
+  &__numbers > span {
+    color: black;
   }
 }
 </style>

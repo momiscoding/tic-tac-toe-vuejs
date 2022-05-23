@@ -25,7 +25,11 @@
         </div>
       </div>
     </div>
-    <div v-if="playerXVictories == matchesToWin || playerOVictories == matchesToWin">
+    <div
+      v-if="
+        playerXVictories == matchesToWin || playerOVictories == matchesToWin
+      "
+    >
       <GameStatistics
         :limit="matchesLimit"
         :played-matches="playedMatches"
@@ -37,26 +41,26 @@
 </template>
 
 <script>
-import Vue from "vue";
+import Vue from 'vue'
 
-import GameBoard from "./components/game-board.vue";
-import GameStatistics from "./components/game-statistics/game-statistics.vue";
-import GameTimer from "./components/game-timer.vue";
+import GameBoard from './components/game-board.vue'
+import GameStatistics from './components/game-statistics/game-statistics.vue'
+import GameTimer from './components/game-timer.vue'
 
 export default Vue.extend({
-  name: "TicTacToe",
+  name: 'TicTacToe',
 
   components: {
     GameBoard,
     GameStatistics,
-    GameTimer
+    GameTimer,
   },
 
   data() {
     return {
       cells: Array(9).fill(null),
       stepNumber: 0,
-      currentPlayer: "X",
+      currentPlayer: 'X',
       winner: null,
       playerXVictories: 0,
       playerOVictories: 0,
@@ -65,18 +69,18 @@ export default Vue.extend({
       matchesLimit: 9,
       gameHistory: [],
       matchesToWin: 5,
-      timeElapsed: "00:00:00"
-    };
+      timeElapsed: '00:00:00',
+    }
   },
 
   watch: {
-    stepNumber: function(val) {
+    stepNumber: function (val) {
       // It's a tie
       if (val === 9) {
-        this.gameHistory.push("-");
-        this.restart();
+        this.gameHistory.push('-')
+        this.restart()
       }
-    }
+    },
   },
 
   // mounted() {
@@ -92,8 +96,8 @@ export default Vue.extend({
 
   methods: {
     hasWinner() {
-      if (this.winner) return true;
-      const cells = this.cells;
+      if (this.winner) return true
+      const cells = this.cells
       const matches = [
         [0, 1, 2],
         [3, 4, 5],
@@ -102,44 +106,42 @@ export default Vue.extend({
         [1, 4, 7],
         [2, 5, 8],
         [0, 4, 8],
-        [2, 4, 6]
-      ];
+        [2, 4, 6],
+      ]
       for (let i = 0; i < matches.length; i++) {
-        const [a, b, c] = matches[i];
-        if (
-          cells[a] &&
-          cells[a] === cells[b] &&
-          cells[a] === cells[c]
-        ) {
-          this.winner = [a, b, c];
+        const [a, b, c] = matches[i]
+        if (cells[a] && cells[a] === cells[b] && cells[a] === cells[c]) {
+          this.winner = [a, b, c]
 
           // Number os wins per player
-          this.currentPlayer === "X" ? this.playerXVictories++ : this.playerOVictories++;
+          this.currentPlayer === 'X'
+            ? this.playerXVictories++
+            : this.playerOVictories++
 
           // Populate game history
-          this.gameHistory.push(this.currentPlayer);
+          this.gameHistory.push(this.currentPlayer)
 
-          this.restart();
+          this.restart()
 
-          return true;
+          return true
         }
       }
-      return false;
+      return false
     },
 
     restart() {
-      this.playedMatches++;
+      this.playedMatches++
 
       // Stop timer
-      this.$refs.timer.stop();
+      this.$refs.timer.stop()
 
       setTimeout(() => {
-        this.cells = Array(9).fill(null);
-        this.stepNumber = 0;
+        this.cells = Array(9).fill(null)
+        this.stepNumber = 0
         // this.currentPlayer = this.currentPlayer;
-        this.winner = null;
-        this.playsCounter++;
-      }, 2000);
+        this.winner = null
+        this.playsCounter++
+      }, 2000)
     },
 
     click(i) {
@@ -150,19 +152,19 @@ export default Vue.extend({
         this.playerXVictories == this.matchesToWin ||
         this.playerOVictories == this.matchesToWin
       )
-        return;
+        return
 
       // start timer
-      this.$refs.timer.start();
+      this.$refs.timer.start()
 
-      this.$set(this.cells, i, this.currentPlayer);
+      this.$set(this.cells, i, this.currentPlayer)
       if (!this.hasWinner()) {
-        this.stepNumber++;
-        this.currentPlayer = this.currentPlayer === "X" ? "O" : "X";
+        this.stepNumber++
+        this.currentPlayer = this.currentPlayer === 'X' ? 'O' : 'X'
       }
-    }
-  }
-});
+    },
+  },
+})
 </script>
 
 <style lang="scss">
@@ -173,13 +175,11 @@ export default Vue.extend({
   &__player {
     margin: auto 0;
   }
-  
+
   @media only screen and (min-width: 768px) {
-  &__timer {
-    width: 100%;
+    &__timer {
+      width: 100%;
+    }
   }
 }
-}
-
-
 </style>
