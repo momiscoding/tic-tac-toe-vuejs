@@ -2,7 +2,7 @@
   <nav class="navbar sticky-top navbar-light">
     <div class="container">
       <a class="navbar-brand" href="#">
-        <img src="/public/assets/logo.png" width="256" height="57" />
+        <img src="/assets/img/logo.png" />
       </a>
       <div class="navbar__right">
         <p>Game Challenge</p>

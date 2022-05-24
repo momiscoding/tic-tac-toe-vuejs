@@ -23,7 +23,7 @@
           <li>
             <a class="text-muted" href="#"
               ><img
-                src="/public/assets/img/facebook.svg"
+                src="/assets/img/facebook.svg"
                 alt="Facebook Logo"
                 class="facebook-icon"
             /></a>
@@ -31,7 +31,7 @@
           <li>
             <a class="text-muted" href="#"
               ><img
-                src="/public/assets/img/twitter.svg"
+                src="/assets/img/twitter.svg"
                 alt="Twitter Logo"
                 class="twitter-icon"
             /></a>
@@ -39,7 +39,7 @@
           <li>
             <a class="text-muted" href="#"
               ><img
-                src="/public/assets/img/instagram.svg"
+                src="/assets/img/instagram.svg"
                 alt="Instagram Logo"
                 class="instagram-icon"
             /></a>
@@ -128,16 +128,13 @@ export default {
 }
 
 ul {
-  justify-content: center;
   font-size: 14px;
   margin-bottom: 15px;
 
-  @media only screen and (min-width: 768px) {
-    justify-content: left;
-  }
-
   & > li {
-    margin-left: 0;
+    flex-grow: 1;
+    margin-bottom: 10px;
+    text-align: center;
   }
 
   li.nav-item {
@@ -149,19 +146,11 @@ img {
   width: 24px;
   opacity: 0.6;
   transition: 0.5s ease-in-out;
+  margin-right: 3px;
 
   &:hover {
     width: 24px;
     opacity: 1;
-  }
-}
-
-@media only screen and (min-width: 768px) {
-  .footer {
-    text-align: left;
-  }
-  .footer ul {
-    justify-content: left;
   }
 }
 </style>
