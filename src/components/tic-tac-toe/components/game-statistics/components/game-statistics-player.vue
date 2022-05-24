@@ -1,6 +1,6 @@
 <template>
   <div class="game-statistics-player">
-    <p>{{ name }}</p>
+    <p>{{ playerName }}</p>
     <div class="game-statistics-player__numbers">0%<br /><span>V</span></div>
     <div class="game-statistics-player__numbers">0%<br /><span>L</span></div>
   </div>
@@ -11,7 +11,7 @@ export default {
   name: 'GameStatisticsPlayer',
 
   props: {
-    name: String,
+    playerName: String,
     // stats: {
     //   type: Object,
     //   default: function() {

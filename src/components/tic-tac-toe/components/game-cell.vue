@@ -1,5 +1,7 @@
 <template>
-  <div @click="$emit('click')" class="cell" :class="[playerToken]"></div>
+  <div @click="$emit('click')" class="cell" :class="[playerToken]">
+    <span>{{ token }}</span>
+  </div>
 </template>
 
 <script>
@@ -7,14 +9,14 @@ export default {
   name: 'GameCell',
 
   props: {
-    value: String,
+    token: String,
   },
 
   computed: {
     playerToken() {
       return {
-        'x-token': this.value && this.value === 'X',
-        'o-token': this.value && this.value === 'O',
+        'x-token': this.token && this.token === 'X',
+        'o-token': this.token && this.token === 'O',
       }
     },
   },
@@ -31,19 +33,5 @@ export default {
   align-items: center;
   justify-content: center;
   padding: 5px;
-}
-
-.x-token {
-  background-image: url('/public/assets/img/X_bright.svg');
-  background-position: top; /* Center the image */
-  background-repeat: no-repeat; /* Do not repeat the image */
-  background-size: cover; /* Resize the background image to cover the entire container */
-}
-
-.o-token {
-  background-image: url('/public/assets/img/O_bright.svg');
-  background-position: top; /* Center the image */
-  background-repeat: no-repeat; /* Do not repeat the image */
-  background-size: cover; /* Resize the background image to cover the entire container */
 }
 </style>

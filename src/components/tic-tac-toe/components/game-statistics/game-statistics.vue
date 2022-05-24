@@ -1,5 +1,5 @@
 <template>
-  <div class="statistics">
+  <div class="game-statistics">
     <div class="container bg-white">
       <div class="row">
         <h4>Awesome statistics</h4>
@@ -8,11 +8,12 @@
       <div class="row">
         <div class="col-md-6">
           <h6>Game victories %</h6>
-          <GameStatisticsPlayer name="Player 1" stats="" />
-          <GameStatisticsPlayer name="Player 2" stats="" />
+          <!-- TODO: Add input to insert player name -->
+          <GameStatisticsPlayer :playerName="`Player 1`" stats="" />
+          <GameStatisticsPlayer :playerName="`Player 2`" stats="" />
         </div>
         <div class="col-md-6">
-          <div class="statistics__section">
+          <div class="game-statistics__section">
             <h6>Played matches</h6>
             <div>
               <div
@@ -25,7 +26,7 @@
               ></div>
             </div>
           </div>
-          <div class="statistics__section">
+          <div class="game-statistics__section">
             <h6>Game history</h6>
             <div>
               <div v-for="(item, index) in limit" :key="index" class="history">
@@ -86,7 +87,7 @@ export default {
 </script>
 
 <style lang="scss">
-.statistics {
+.game-statistics {
   padding: 65px;
 
   &__section {

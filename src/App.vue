@@ -1,12 +1,12 @@
 <template>
   <div id="app">
-    <!-- AppHeader  -->
+    <!-- Header  -->
     <AppHeader :class="{ scrolled: isScrolled }" />
 
-    <!-- TicTacToe -->
+    <!-- Game -->
     <TicTacToe />
 
-    <!-- AppFooter -->
+    <!-- Footer -->
     <AppFooter />
   </div>
 </template>
@@ -22,9 +22,9 @@ export default Vue.extend({
   name: 'app',
 
   components: {
-    TicTacToe,
     AppHeader,
     AppFooter,
+    TicTacToe,
   },
 
   data() {

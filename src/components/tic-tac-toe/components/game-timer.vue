@@ -6,6 +6,7 @@
 </template>
 
 <script>
+// TODO: Change this to mixin instead of component
 export default {
   data() {
     return {

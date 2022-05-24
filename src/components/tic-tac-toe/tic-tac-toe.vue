@@ -1,13 +1,11 @@
 <template>
   <div class="tic-tac-toe">
-    <div class="container game bg-light">
+    <div class="container bg-light">
       <div class="row">
         <h4>Tic tac toe games</h4>
         <p>Welcome to the best game in the world.</p>
         <div class="col-md-6 order-md-2">
-          <div class="game__board">
-            <GameBoard :cells="cells" :winner="winner" @click="click" />
-          </div>
+          <GameBoard :cells="cells" :winner="winner" @click="click" />
         </div>
         <!-- TODO: This could become a component - someday.... -->
         <div class="col col-md-3 order-1 order-md-1 game__player">
@@ -172,13 +170,15 @@ export default Vue.extend({
   max-width: 100%;
   padding: 65px;
 
-  &__player {
-    margin: auto 0;
-  }
+  .game {
+    &__player {
+      margin: auto 0;
+    }
 
-  @media only screen and (min-width: 768px) {
-    &__timer {
-      width: 100%;
+    @media only screen and (min-width: 768px) {
+      &__timer {
+        width: 100%;
+      }
     }
   }
 }
