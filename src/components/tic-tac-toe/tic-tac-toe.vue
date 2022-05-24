@@ -1,13 +1,13 @@
 <template>
   <div class="tic-tac-toe">
-    <div class="container bg-light">
+    <div class="container">
       <div class="row">
         <h4>Tic tac toe games</h4>
         <p>Welcome to the best game in the world.</p>
         <div class="col-md-6 order-md-2">
           <GameBoard :cells="cells" :winner="winner" @click="click" />
         </div>
-        <!-- TODO: This could become a component - someday.... -->
+        <!-- TODO: This could become a component.... -->
         <div class="col col-md-3 order-1 order-md-1 game__player">
           <p class="fs-5 fw-bold">Player 1</p>
           <p class="fs-1">{{ playerXVictories }}</p>

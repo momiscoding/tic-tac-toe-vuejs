@@ -12,8 +12,8 @@
       <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
         <h6>Contacts</h6>
         <ul class="nav flex-column">
-          <li class="nav-item mb-2">(+351) 123 456 789</li>
-          <li class="nav-item mb-2">Rua Sá da Bandeira, 111, Porto</li>
+          <li class="nav-item mb-2">(+351) 22 123 45 67</li>
+          <li class="nav-item mb-2">Rua das Flores, Porto</li>
         </ul>
       </div>
 
@@ -118,34 +118,42 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
 .footer {
   padding: 60px 150px;
+
+  @media only screen and (min-width: 768px) {
+    text-align: left;
+  }
 }
 
-.footer ul {
+ul {
   justify-content: center;
   font-size: 14px;
   margin-bottom: 15px;
+
+  @media only screen and (min-width: 768px) {
+    justify-content: left;
+  }
+
+  & > li {
+    margin-left: 0;
+  }
+
+  li.nav-item {
+    margin: 0;
+  }
 }
 
-.footer ul > li {
-  margin-left: 0;
-}
-
-.footer li.nav-item {
-  margin: 0;
-}
-
-.footer img {
+img {
   width: 24px;
   opacity: 0.6;
   transition: 0.5s ease-in-out;
-}
 
-.footer img:hover {
-  width: 24px;
-  opacity: 1;
+  &:hover {
+    width: 24px;
+    opacity: 1;
+  }
 }
 
 @media only screen and (min-width: 768px) {
